@@ -88,7 +88,7 @@ export function SolutionSection() {
               Suivi personnalisé
             </h3>
             <p className="text-[var(--foreground-muted)] text-sm">
-              Nutritionniste dédiée, pesées hebdomadaires et analyses pour
+              Nutritionniste dédiée, pesées hebdomadaires et analyses de composition corporelle pour
               suivre votre progression en temps réel.
             </p>
           </div>
