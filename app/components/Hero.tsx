@@ -21,7 +21,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl text-[var(--foreground-secondary)] max-w-2xl mx-auto leading-relaxed">
-            Le seul programme clés en main pour les femmes actives de Dakar qui
+            Le programme clés en main pour les femmes actives de Dakar qui
             veulent des résultats visibles, sans gérer les détails.
           </p>
 
