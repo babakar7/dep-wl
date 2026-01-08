@@ -12,7 +12,7 @@ export function SolutionSection() {
             Et si quelqu&apos;un s&apos;occupait de tout pour vous ?
           </h2>
           <p className="mt-4 text-lg text-[var(--foreground-secondary)]">
-            Le Protocole Revive est le premier programme 100% clés en main à Dakar.
+            Le Protocole Revive est un programme 100% clés en main à Dakar.
             Vous n&apos;avez qu&apos;une chose à faire : vous présenter.
           </p>
         </div>
