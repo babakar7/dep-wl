@@ -17,9 +17,9 @@ const problems = [
       "Seule, c'est difficile de rester disciplinée. Sans accompagnement, on abandonne facilement face aux premiers obstacles.",
   },
   {
-    title: "Le doute qui persiste",
+    title: "La solitude du parcours",
     description:
-      "Après tant d'échecs, vous doutez que quelque chose puisse vraiment fonctionner pour vous cette fois-ci.",
+      "Vous vous sentez seule dans votre démarche. Personne autour de vous ne comprend vraiment vos défis et vos objectifs.",
   },
 ];
 

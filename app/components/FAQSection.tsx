@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Comment se passe une journée type ?",
     answer:
-      "Votre repas et jus détox sont livrés chaque jour. Vous assistez à 3 séances de sport par semaine (environ 1h chacune) selon le planning établi. Entre les séances, vous suivez les conseils de notre nutritionniste pour vos autres repas.",
+      "Votre repas et jus détox sont livrés chaque jour (du lundi au vendredi). Vous assistez à 3 séances de sport par semaine (environ 1h chacune) selon le planning établi. L'objectif quotidien : atteindre 10 000 pas pour maximiser vos résultats. Entre les séances, vous suivez les conseils de notre nutritionniste pour vos autres repas.",
   },
   {
     question: "Je n'ai vraiment pas le temps, est-ce adapté pour moi ?",
