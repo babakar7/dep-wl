@@ -1,8 +1,4 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Container } from "./ui/Container";
+import { Container } from "../../components/ui/Container";
 
 const pillars = [
   {
@@ -21,10 +17,10 @@ const pillars = [
         />
       </svg>
     ),
-    title: "La Cuisine Totale Revive",
+    title: "La Cuisine Revive",
     description:
-      "2 repas par jour + 1 jus détox livrés 7j/7. Fini les courses, la cuisine et la vaisselle. 56 repas gourmands et 28 jus pressés à froid.",
-    value: "406 000 F",
+      "1 déjeuner sain + 1 jus détox livrés du lundi au vendredi (20 repas). Des repas savoureux préparés par notre chef, adaptés à vos objectifs.",
+    value: "170 000 F",
   },
   {
     icon: (
@@ -95,98 +91,31 @@ const pillars = [
       "Pesées régulières et analyses de composition corporelle. Voyez votre corps se transformer en temps réel.",
     value: "30 000 F",
   },
-  {
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-        />
-      </svg>
-    ),
-    title: "L'App de Suivi Revive Challenge",
-    description:
-      "Accès premium à notre application pour tracker en temps réel : poids, repas, courbe de progression, et nombre de pas.",
-    value: "45 000 F",
-  },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.4, 0.25, 1] as const,
-    },
-  },
-};
-
 export function ProgramDetails() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section className="py-20 sm:py-28 bg-[var(--background-secondary)]">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center mb-16"
-        >
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-[var(--accent)] text-sm font-medium tracking-wide uppercase mb-4">
             Le protocole complet
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--foreground)]">
-            Les 5 piliers de votre transformation
+            Les 4 piliers de votre transformation
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto"
-        >
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {pillars.map((pillar, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={cardVariants}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className={`p-6 rounded-[var(--radius-lg)] bg-[var(--background-tertiary)] border border-[var(--border)] shadow-[var(--shadow-md)] cursor-default ${
-                index === pillars.length - 1 && pillars.length % 2 === 1
-                  ? "sm:col-span-2 sm:max-w-[calc(50%-12px)] sm:mx-auto"
-                  : ""
-              }`}
+              className="p-6 rounded-[var(--radius-lg)] bg-[var(--background-tertiary)] border border-[var(--border)] shadow-[var(--shadow-md)]"
             >
               <div className="flex items-start gap-4">
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--accent-light)] flex items-center justify-center flex-shrink-0 text-[var(--accent)]"
-                >
+                <div className="w-12 h-12 rounded-[var(--radius-md)] bg-[var(--accent-light)] flex items-center justify-center flex-shrink-0 text-[var(--accent)]">
                   {pillar.icon}
-                </motion.div>
+                </div>
                 <div className="flex-1">
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <h3 className="text-lg font-medium text-[var(--foreground)]">
@@ -201,9 +130,9 @@ export function ProgramDetails() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

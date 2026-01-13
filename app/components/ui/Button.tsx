@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -22,15 +25,15 @@ export function Button({
   disabled = false,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-200 ease-out whitespace-nowrap";
+    "inline-flex items-center justify-center font-medium whitespace-nowrap";
 
   const variants = {
     primary:
-      "bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] shadow-[var(--shadow-md)]",
+      "bg-[var(--accent)] text-white shadow-[var(--shadow-md)]",
     secondary:
-      "bg-[var(--foreground)] text-white hover:bg-[var(--foreground-secondary)]",
+      "bg-[var(--foreground)] text-white",
     outline:
-      "bg-transparent text-[var(--foreground)] border border-[var(--border-strong)] hover:bg-[var(--background-secondary)]",
+      "bg-transparent text-[var(--foreground)] border border-[var(--border-strong)]",
   };
 
   const sizes = {
@@ -41,22 +44,51 @@ export function Button({
 
   const styles = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
 
+  const MotionLink = motion.create(Link);
+
   if (href) {
     return (
-      <Link href={href} className={styles}>
+      <MotionLink
+        href={href}
+        className={styles}
+        whileHover={{
+          scale: 1.02,
+          boxShadow: "0 10px 30px -10px rgba(124, 84, 125, 0.4)",
+        }}
+        whileTap={{ scale: 0.98 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 17,
+        }}
+      >
         {children}
-      </Link>
+      </MotionLink>
     );
   }
 
   return (
-    <button
+    <motion.button
       type={type}
       onClick={onClick}
       disabled={disabled}
       className={`${styles} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+      whileHover={
+        disabled
+          ? {}
+          : {
+              scale: 1.02,
+              boxShadow: "0 10px 30px -10px rgba(124, 84, 125, 0.4)",
+            }
+      }
+      whileTap={disabled ? {} : { scale: 0.98 }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 17,
+      }}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }

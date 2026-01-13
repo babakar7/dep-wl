@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Revive | Protocole -6kg en 28 jours | Dakar",
+  title: "Revive | Protocole -6kg en 28 jours * | Dakar",
   description: "Le programme clés en main pour les femmes actives de Dakar. Perdez 6kg en 28 jours avec repas livrés, coaching sportif et suivi nutritionnel personnalisé.",
 };
 

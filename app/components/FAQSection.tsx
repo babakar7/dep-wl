@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Comment se passe une journée type ?",
     answer:
-      "Votre repas et jus détox sont livrés chaque jour (du lundi au vendredi). Vous assistez à 3 séances de sport par semaine (environ 1h chacune) selon le planning établi. L'objectif quotidien : atteindre 10 000 pas pour maximiser vos résultats. Entre les séances, vous suivez les conseils de notre nutritionniste pour vos autres repas.",
+      "Vos 2 repas et votre jus détox sont livrés chaque jour (7j/7). Vous assistez à 3 séances de sport par semaine (environ 1h chacune) selon le planning établi. L'objectif quotidien : atteindre 10 000 pas pour maximiser vos résultats. Notre nutritionniste vous accompagne tout au long du programme.",
   },
   {
     question: "Je n'ai vraiment pas le temps, est-ce adapté pour moi ?",
@@ -22,12 +22,12 @@ const faqs = [
   {
     question: "Que se passe-t-il après les 28 jours ?",
     answer:
-      "Les diplômées du Protocole Revive ont accès à un tarif privilégié pour continuer pendant 1 mois avec notre abonnement membres. Vous pouvez poursuivre les entraînements et le suivi nutritionnel à un tarif préférentiel.",
+      "Les diplômées du Protocole Revive ont accès à un tarif privilégié pour continuer pendant 1 mois avec notre abonnement. Vous pouvez poursuivre les entraînements et le suivi nutritionnel à un tarif préférentiel.",
   },
   {
     question: "Le paiement est-il en une fois ?",
     answer:
-      "Oui, le paiement de 375 000 FCFA se fait en une fois à l'inscription. Cela inclut l'intégralité du programme sur 28 jours ainsi que tous les bonus.",
+      "Oui, le paiement de 490 000 FCFA se fait en une fois à l'inscription. Cela inclut l'intégralité du programme sur 28 jours ainsi que tous les bonus.",
   },
   {
     question: "Où se déroulent les séances ?",

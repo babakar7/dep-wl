@@ -33,8 +33,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/40">
-          <p>&copy; {new Date().getFullYear()} Revive. Tous droits réservés.</p>
+        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/40">
+          <p className="text-xs max-w-xl mx-auto mb-4">
+            * Note légale : Perte de poids constatée allant jusqu&apos;à 6kg en 4
+            semaines. Les résultats peuvent varier d&apos;une personne à
+            l&apos;autre en fonction du métabolisme de base et de
+            l&apos;assiduité au programme.
+          </p>
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Revive. Tous droits réservés.
+          </p>
         </div>
       </Container>
     </footer>
