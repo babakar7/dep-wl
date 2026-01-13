@@ -21,9 +21,9 @@ const solutions = [
         />
       </svg>
     ),
-    title: "Repas livrés",
+    title: "Repas livrés 7j/7",
     description:
-      "Un déjeuner sain et un jus détox livrés chaque jour. Zéro courses, zéro cuisine.",
+      "2 repas sains et un jus détox livrés chaque jour. Zéro courses, zéro cuisine, zéro vaisselle.",
   },
   {
     icon: (
