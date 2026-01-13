@@ -23,7 +23,7 @@ const pillars = [
     ),
     title: "La Cuisine Totale Revive",
     description:
-      "2 repas par jour + 1 jus détox livrés 7j/7. Fini les courses, la cuisine et la vaisselle. 56 repas gourmands et 28 jus pressés à froid.",
+      "2 repas par jour + 1 jus détox livrés 7j/7. Fini les courses, la cuisine et la vaisselle. 56 repas gourmands et 28 jus detox.",
     value: "406 000 F",
   },
   {
