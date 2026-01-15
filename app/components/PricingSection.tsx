@@ -7,12 +7,12 @@ import { Container } from "./ui/Container";
 import { AnimatedCounter } from "./ui/AnimatedSection";
 
 const lineItems = [
-  { label: "La Cuisine Totale Revive (56 repas + 28 jus, 7j/7)", value: "406 000 F" },
-  { label: "12 séances d'entraînement", value: "168 000 F" },
+  { label: "La Cuisine Totale Revive (42 repas + 21 jus, 7j/7)", value: "305 000 F" },
+  { label: "9 séances d'entraînement", value: "126 000 F" },
   { label: "App de Suivi Revive Challenge", value: "45 000 F" },
-  { label: "Suivi nutritionnel personnalisé", value: "50 000 F" },
+  { label: "Suivi nutritionnel personnalisé", value: "100 000 F" },
   { label: "Suivi biométrique", value: "30 000 F" },
-  { label: "Bonus exclusifs", value: "85 000 F" },
+  { label: "Bonus exclusifs", value: "65 000 F" },
 ];
 
 export function PricingSection() {
@@ -79,7 +79,7 @@ export function PricingSection() {
                       Valeur totale
                     </span>
                     <span className="font-mono text-[var(--foreground-muted)] line-through">
-                      784 000 F
+                      671 000 F
                     </span>
                   </div>
                 </motion.div>
@@ -107,7 +107,7 @@ export function PricingSection() {
                   transition={{ delay: 1.2 }}
                   className="mt-2 text-sm text-[var(--accent)] font-medium"
                 >
-                  Économisez 294 000 F
+                  Économisez 181 000 F
                 </motion.p>
               </motion.div>
 

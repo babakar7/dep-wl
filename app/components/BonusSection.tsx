@@ -6,10 +6,16 @@ import { Container } from "./ui/Container";
 
 const bonuses = [
   {
-    title: "1 séance de Drainage Lymphatique",
+    title: "1 séance de Yoga",
     description:
-      "Éliminez les toxines et réduisez la rétention d'eau pour des résultats visibles plus rapidement.",
-    value: "45 000 F",
+      "Une séance de yoga pour améliorer votre souplesse, réduire le stress et compléter votre transformation.",
+    value: "15 000 F",
+  },
+  {
+    title: "Kit Détox Maison",
+    description:
+      "Un kit complet avec tisanes, infusions et recettes détox pour prolonger les bienfaits du programme chez vous.",
+    value: "10 000 F",
   },
   {
     title: "Accès illimité à la piscine",
@@ -127,7 +133,7 @@ export function BonusSection() {
               transition={{ delay: 0.8 }}
               className="text-[var(--gold-light)] font-medium"
             >
-              85 000 F
+              65 000 F
             </motion.span>
           </p>
         </motion.div>

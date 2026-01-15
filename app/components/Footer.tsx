@@ -8,7 +8,7 @@ export function Footer() {
           <div>
             <p className="text-xl font-semibold tracking-tight">REVIVE</p>
             <p className="text-sm text-white/60 mt-1">
-              Transformez votre corps en 28 jours
+              Transformez votre corps en 21 jours
             </p>
           </div>
 

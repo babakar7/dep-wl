@@ -303,7 +303,7 @@ export default function InscriptionPage() {
               {/* Engagement */}
               <div>
                 <label className="block text-sm font-medium text-[var(--foreground)] mb-3">
-                  Êtes-vous prête à vous engager sur 28 jours ?
+                  Êtes-vous prête à vous engager sur 21 jours ?
                 </label>
                 <div className="space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer">

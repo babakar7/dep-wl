@@ -19,7 +19,7 @@ export function CTASection() {
           </Button>
 
           <p className="mt-6 text-sm text-[var(--foreground-muted)]">
-            5 places maximum par mois &bull; Inscriptions limitées
+            5 places maximum par cohorte &bull; Inscriptions limitées
           </p>
         </div>
       </Container>

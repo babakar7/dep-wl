@@ -23,8 +23,8 @@ const pillars = [
     ),
     title: "La Cuisine Totale Revive",
     description:
-      "2 repas par jour + 1 jus détox livrés 7j/7. Fini les courses, la cuisine et la vaisselle. 56 repas gourmands et 28 jus detox.",
-    value: "406 000 F",
+      "2 repas par jour + 1 jus détox livrés 7j/7. Fini les courses, la cuisine et la vaisselle. 42 repas gourmands et 21 jus detox.",
+    value: "305 000 F",
   },
   {
     icon: (
@@ -50,8 +50,8 @@ const pillars = [
     ),
     title: "L'Entraînement Brûle-Graisse",
     description:
-      "12 séances ciblées : Reformer Pilates, Mat Pilates et Cardio. Sculptez votre silhouette sans vous épuiser.",
-    value: "168 000 F",
+      "9 séances ciblées : Reformer Pilates, Mat Pilates et Cardio. Sculptez votre silhouette sans vous épuiser.",
+    value: "126 000 F",
   },
   {
     icon: (
@@ -72,7 +72,7 @@ const pillars = [
     title: "Le Cerveau Nutritionnel",
     description:
       "Bilan nutritionnel complet + suivi hebdomadaire avec notre experte. Des conseils personnalisés pour maximiser vos résultats.",
-    value: "50 000 F",
+    value: "100 000 F",
   },
   {
     icon: (
