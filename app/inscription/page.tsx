@@ -5,30 +5,24 @@ import Link from "next/link";
 import { Container } from "../components/ui/Container";
 import { Button } from "../components/ui/Button";
 
-type FormData = {
+type FormFields = {
   prenom: string;
-  whatsapp: string;
+  phone: string;
   email: string;
-  age: string;
-  objectif: string;
-  obstacles: string;
   source: string;
   engagement: string;
 };
 
-const initialFormData: FormData = {
+const initialFormData: FormFields = {
   prenom: "",
-  whatsapp: "",
+  phone: "",
   email: "",
-  age: "",
-  objectif: "",
-  obstacles: "",
   source: "",
   engagement: "",
 };
 
 export default function InscriptionPage() {
-  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [formData, setFormData] = useState<FormFields>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -45,12 +39,29 @@ export default function InscriptionPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const form = new FormData();
+      form.append("prenom", formData.prenom);
+      form.append("phone", formData.phone);
+      form.append("email", formData.email);
+      form.append("source", formData.source);
+      form.append("engagement", formData.engagement);
 
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+      const response = await fetch("https://formbold.com/s/9gDZM", {
+        method: "POST",
+        body: form,
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch {
+      alert("Erreur de connexion. Vérifiez votre connexion internet.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -77,8 +88,7 @@ export default function InscriptionPage() {
           </h1>
           <p className="text-[var(--foreground-secondary)] mb-8">
             Merci pour votre intérêt pour le Protocole Revive. Notre équipe va
-            examiner votre candidature et vous contactera très bientôt sur
-            WhatsApp.
+            examiner votre candidature et vous contactera très bientôt.
           </p>
           <Link
             href="/"
@@ -148,20 +158,20 @@ export default function InscriptionPage() {
                 />
               </div>
 
-              {/* WhatsApp */}
+              {/* Téléphone */}
               <div>
                 <label
-                  htmlFor="whatsapp"
+                  htmlFor="phone"
                   className="block text-sm font-medium text-[var(--foreground)] mb-2"
                 >
-                  Numéro WhatsApp
+                  Numéro de téléphone
                 </label>
                 <input
                   type="tel"
-                  id="whatsapp"
-                  name="whatsapp"
+                  id="phone"
+                  name="phone"
                   required
-                  value={formData.whatsapp}
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background-tertiary)] text-[var(--foreground)] placeholder:text-[var(--foreground-faint)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors"
                   placeholder="+221 7X XXX XX XX"
@@ -185,88 +195,6 @@ export default function InscriptionPage() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background-tertiary)] text-[var(--foreground)] placeholder:text-[var(--foreground-faint)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors"
                   placeholder="votre@email.com"
-                />
-              </div>
-
-              {/* Age */}
-              <div>
-                <label
-                  htmlFor="age"
-                  className="block text-sm font-medium text-[var(--foreground)] mb-2"
-                >
-                  Tranche d&apos;âge
-                </label>
-                <select
-                  id="age"
-                  name="age"
-                  required
-                  value={formData.age}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background-tertiary)] text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors appearance-none cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2378716C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 12px center",
-                    backgroundSize: "20px",
-                  }}
-                >
-                  <option value="">Sélectionnez votre tranche d&apos;âge</option>
-                  <option value="25-30">25-30 ans</option>
-                  <option value="31-35">31-35 ans</option>
-                  <option value="36-40">36-40 ans</option>
-                  <option value="41-45">41-45 ans</option>
-                  <option value="46+">46 ans et plus</option>
-                </select>
-              </div>
-
-              {/* Objectif */}
-              <div>
-                <label
-                  htmlFor="objectif"
-                  className="block text-sm font-medium text-[var(--foreground)] mb-2"
-                >
-                  Quel est votre objectif principal ?
-                </label>
-                <select
-                  id="objectif"
-                  name="objectif"
-                  required
-                  value={formData.objectif}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background-tertiary)] text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors appearance-none cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2378716C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 12px center",
-                    backgroundSize: "20px",
-                  }}
-                >
-                  <option value="">Sélectionnez un objectif</option>
-                  <option value="perdre-poids">Perdre du poids</option>
-                  <option value="tonifier">Me tonifier</option>
-                  <option value="energie">Retrouver de l&apos;énergie</option>
-                  <option value="bien-etre">Me sentir bien dans mon corps</option>
-                </select>
-              </div>
-
-              {/* Obstacles */}
-              <div>
-                <label
-                  htmlFor="obstacles"
-                  className="block text-sm font-medium text-[var(--foreground)] mb-2"
-                >
-                  Qu&apos;est-ce qui vous a empêchée d&apos;atteindre vos objectifs
-                  jusqu&apos;ici ?
-                </label>
-                <textarea
-                  id="obstacles"
-                  name="obstacles"
-                  required
-                  rows={4}
-                  value={formData.obstacles}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background-tertiary)] text-[var(--foreground)] placeholder:text-[var(--foreground-faint)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors resize-none"
-                  placeholder="Partagez brièvement votre expérience..."
                 />
               </div>
 
@@ -347,7 +275,7 @@ export default function InscriptionPage() {
                   {isSubmitting ? "Envoi en cours..." : "Envoyer ma candidature"}
                 </Button>
                 <p className="mt-4 text-center text-sm text-[var(--foreground-muted)]">
-                  Nous vous contacterons sous 24h sur WhatsApp
+                  Nous vous contacterons sous 24h
                 </p>
               </div>
             </form>
